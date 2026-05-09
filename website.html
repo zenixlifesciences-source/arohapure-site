@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AROHAPURE Private Limited — Clean Label Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:    #2C3A1A;
+  --olive:     #4A5C28;
+  --olive-mid: #6B7A3A;
+  --gold:      #8A7A3C;
+  --gold-lt:   #B8A860;
+  --ivory:     #F5F0E8;
+  --linen:     #EDE8DC;
+  --cream:     #FAF7F2;
+  --stone:     #8A8070;
+  --stone-lt:  #BDB8AC;
+  --carbon:    #1A1A14;
+  --white:     #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--carbon);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(250,247,242,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(44,58,26,0.1);
+  transition: padding .3s;
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo-img { height: 36px; width: auto; object-fit: contain; display: block; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--stone);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--forest); }
+.nav-cta {
+  font-size: 11px; font-weight: 400; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--forest);
+  border: 0.5px solid var(--forest); padding: 9px 20px;
+  text-decoration: none; transition: all .2s;
+}
+.nav-cta:hover { background: var(--forest); color: var(--ivory); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column;
+  justify-content: center; padding: 120px 64px 80px 80px;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0; animation: fadeUp .8s .2s forwards;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 5.5vw, 80px);
+  font-weight: 300; line-height: 1.08;
+  color: var(--forest); letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  opacity: 0; animation: fadeUp .8s .4s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-body {
+  font-size: 15px; font-weight: 300; line-height: 1.8;
+  color: var(--stone); max-width: 400px; margin-bottom: 48px;
+  opacity: 0; animation: fadeUp .8s .6s forwards;
+}
+.hero-actions {
+  display: flex; gap: 16px; align-items: center;
+  opacity: 0; animation: fadeUp .8s .8s forwards;
+}
+.btn-primary {
+  display: inline-block; padding: 14px 36px;
+  background: var(--forest); color: var(--ivory);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background .25s, transform .2s;
+}
+.btn-primary:hover { background: var(--olive); transform: translateY(-1px); }
+.btn-ghost {
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--forest);
+  text-decoration: none; border-bottom: 0.5px solid var(--gold);
+  padding-bottom: 2px; transition: color .2s;
+}
+.btn-ghost:hover { color: var(--gold); }
+
+.hero-right {
+  position: relative; background: var(--linen);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(44,58,26,0.04) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(44,58,26,0.04) 60px);
+}
+.hero-visual {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 32px;
+  padding: 80px 48px;
+  opacity: 0; animation: fadeIn 1.2s .6s forwards;
+}
+.hero-pill-stack { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
+.product-pill {
+  background: var(--white); border: 0.5px solid rgba(44,58,26,0.12);
+  padding: 16px 20px; display: flex; align-items: center; gap: 16px;
+  transition: transform .2s, box-shadow .2s;
+}
+.product-pill:hover { transform: translateX(4px); box-shadow: -4px 0 0 var(--gold); }
+.pill-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.pill-dot.calm   { background: var(--olive-mid); }
+.pill-dot.iron   { background: var(--gold); }
+.pill-dot.gut    { background: var(--forest); }
+.pill-dot.sun    { background: var(--gold-lt); }
+.pill-name { font-size: 13px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); }
+.pill-desc { font-size: 11px; color: var(--stone); margin-left: auto; letter-spacing: 0.06em; }
+
+.hero-stat-row {
+  display: flex; gap: 32px; padding-top: 24px;
+  border-top: 0.5px solid rgba(44,58,26,0.12); width: 100%; max-width: 320px;
+}
+.stat-item { display: flex; flex-direction: column; gap: 4px; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--forest); line-height: 1;
+}
+.stat-lbl { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); }
+
+/* ── SECTION COMMON ── */
+.section { padding: 120px 80px; }
+.section-alt { background: var(--linen); }
+
+.section-eyebrow {
+  font-size: 10px; font-weight: 400; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 20px; display: block;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 300; line-height: 1.15;
+  color: var(--forest); margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-body {
+  font-size: 15px; font-weight: 300; line-height: 1.85;
+  color: var(--stone); max-width: 520px;
+}
+
+/* ── PHILOSOPHY ── */
+.philosophy-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.philosophy-pillars { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+.pillar {
+  display: flex; gap: 24px; padding: 28px 0;
+  border-bottom: 0.5px solid rgba(44,58,26,0.1);
+  transition: padding-left .25s;
+}
+.pillar:first-child { border-top: 0.5px solid rgba(44,58,26,0.1); }
+.pillar:hover { padding-left: 8px; }
+.pillar-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 300; color: rgba(44,58,26,0.15);
+  line-height: 1; flex-shrink: 0; width: 40px;
+}
+.pillar-body {}
+.pillar-title { font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--forest); margin-bottom: 8px; }
+.pillar-text { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--stone); }
+
+.philosophy-right {
+  background: var(--forest); padding: 64px 56px;
+  display: flex; flex-direction: column; gap: 32px; position: relative; overflow: hidden;
+}
+.philosophy-right::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.philosophy-right::after {
+  content: '';
+  position: absolute; bottom: -60px; left: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.philosophy-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; font-style: italic;
+  color: var(--ivory); line-height: 1.5; position: relative; z-index: 1;
+}
+.philosophy-quote span { color: var(--gold-lt); }
+.philosophy-attr { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); position: relative; z-index: 1; }
+
+.no-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 28px; position: relative; z-index: 1; }
+.no-list li {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+}
+.no-list li::before {
+  content: ''; display: block; width: 20px; height: 0.5px;
+  background: var(--gold-lt); flex-shrink: 0;
+}
+
+/* ── PRODUCTS ── */
+.products-header { text-align: center; margin-bottom: 64px; }
+.products-header .section-body { margin: 0 auto; text-align: center; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.product-card {
+  background: var(--white); padding: 48px 32px 40px;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative; overflow: hidden;
+  transition: transform .25s;
+}
+.product-card:hover { transform: translateY(-4px); z-index: 2; }
+.product-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--forest);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .35s;
+}
+.product-card:hover::before { transform: scaleX(1); }
+.product-card.featured { background: var(--forest); }
+
+.card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 300; color: rgba(44,58,26,0.08);
+  line-height: 1; margin-bottom: 24px;
+}
+.featured .card-num { color: rgba(255,255,255,0.06); }
+.card-name {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--forest); margin-bottom: 8px;
+}
+.featured .card-name { color: var(--ivory); }
+.card-full {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 300; color: var(--olive);
+  margin-bottom: 20px; line-height: 1.3;
+}
+.featured .card-full { color: var(--gold-lt); }
+.card-divider { height: 0.5px; background: rgba(44,58,26,0.1); margin: 20px 0; }
+.featured .card-divider { background: rgba(255,255,255,0.1); }
+.card-ing-label {
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--stone-lt); margin-bottom: 10px;
+}
+.featured .card-ing-label { color: rgba(255,255,255,0.35); }
+.card-ingredients { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+.ing-tag {
+  font-size: 10px; padding: 3px 8px;
+  background: var(--linen); color: var(--olive-mid);
+  letter-spacing: 0.08em;
+}
+.featured .ing-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+.card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 300; color: var(--forest);
+  margin-top: auto;
+}
+.featured .card-price { color: var(--ivory); }
+.card-price span { font-size: 12px; color: var(--stone); margin-left: 4px; }
+.featured .card-price span { color: rgba(255,255,255,0.35); }
+.card-btn {
+  display: block; margin-top: 20px; padding: 11px 0; text-align: center;
+  font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+  border: 0.5px solid rgba(44,58,26,0.2); color: var(--forest);
+  text-decoration: none; transition: all .2s;
+}
+.card-btn:hover { background: var(--forest); color: var(--ivory); border-color: var(--forest); }
+.featured .card-btn { border-color: rgba(255,255,255,0.2); color: var(--ivory); }
+.featured .card-btn:hover { background: rgba(255,255,255,0.1); }
+
+/* ── SCIENCE ── */
+.science-section { background: var(--forest); padding: 120px 80px; }
+.science-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 120px; align-items: center; }
+.science-eyebrow { color: var(--gold-lt); }
+.science-title { color: var(--ivory); }
+.science-title em { color: var(--gold-lt); }
+.science-body { color: rgba(255,255,255,0.5); }
+
+.science-credentials { display: flex; flex-direction: column; gap: 2px; margin-top: 48px; }
+.cred {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 20px; background: rgba(255,255,255,0.04);
+  border-left: 2px solid transparent; transition: border-color .2s, background .2s;
+}
+.cred:hover { border-left-color: var(--gold); background: rgba(255,255,255,0.07); }
+.cred-icon {
+  width: 36px; height: 36px; border: 0.5px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cred-icon svg { width: 16px; height: 16px; stroke: var(--gold-lt); fill: none; stroke-width: 1.5; }
+.cred-body {}
+.cred-title { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory); margin-bottom: 3px; }
+.cred-sub { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+.science-right { display: flex; flex-direction: column; gap: 40px; }
+.ingredient-card {
+  background: rgba(255,255,255,0.04); padding: 32px;
+  border: 0.5px solid rgba(255,255,255,0.07);
+  transition: background .2s;
+}
+.ingredient-card:hover { background: rgba(255,255,255,0.08); }
+.ic-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.ic-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--ivory); }
+.ic-badge {
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 3px 8px; background: rgba(184,168,96,0.15); color: var(--gold-lt);
+  border: 0.5px solid rgba(184,168,96,0.25);
+}
+.ic-desc { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.ic-source { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+
+/* ── PROOF / QR STRIP ── */
+.proof-strip {
+  background: var(--linen); padding: 80px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 48px; flex-wrap: wrap;
+  border-top: 0.5px solid rgba(44,58,26,0.1);
+  border-bottom: 0.5px solid rgba(44,58,26,0.1);
+}
+.proof-item { display: flex; flex-direction: column; gap: 8px; }
+.proof-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 300; line-height: 1; color: var(--forest);
+}
+.proof-num span { font-size: 24px; color: var(--gold); }
+.proof-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stone); }
+.proof-divider { width: 0.5px; height: 80px; background: rgba(44,58,26,0.15); }
+.proof-qr-block { display: flex; align-items: center; gap: 24px; }
+.qr-box {
+  width: 80px; height: 80px; background: var(--forest);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px;
+}
+.qr-box span { font-size: 8px; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+.qr-icon { width: 36px; height: 36px; }
+.proof-qr-text {}
+.proof-qr-title { font-size: 14px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest); margin-bottom: 6px; }
+.proof-qr-sub { font-size: 12px; font-weight: 300; color: var(--stone); line-height: 1.6; max-width: 220px; }
+
+/* ── ABOUT ── */
+
+
+
+/* ── BANNER ── */
+.banner {
+  background: var(--forest); padding: 80px;
+  display: flex; align-items: center; justify-content: space-between; gap: 48px;
+}
+.banner-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 44px); font-weight: 300;
+  color: var(--ivory); line-height: 1.3;
+}
+.banner-text em { font-style: italic; color: var(--gold-lt); }
+.banner-actions { display: flex; gap: 16px; flex-shrink: 0; }
+.btn-ivory {
+  display: inline-block; padding: 14px 36px;
+  background: var(--ivory); color: var(--forest);
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; text-decoration: none;
+  transition: background .2s;
+}
+.btn-ivory:hover { background: var(--linen); }
+.btn-outline-ivory {
+  display: inline-block; padding: 13px 35px;
+  border: 0.5px solid rgba(255,255,255,0.3); color: var(--ivory);
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; text-decoration: none;
+  transition: border-color .2s;
+}
+.btn-outline-ivory:hover { border-color: rgba(255,255,255,0.7); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--carbon); padding: 80px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px;
+}
+.footer-brand {}
+.footer-logo { display: block; margin-bottom: 20px; }
+.footer-logo-img { height: 36px; width: auto; object-fit: contain; display: block; filter: brightness(0) invert(1) sepia(1) saturate(0.3) brightness(1.6); opacity: 0.85; }
+.footer-tagline {
+  font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3);
+  line-height: 1.7; margin-bottom: 28px;
+}
+.footer-contact { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.9; }
+.footer-contact a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-col-title {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 20px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.45);
+  text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: var(--ivory); }
+.footer-bottom {
+  background: var(--carbon); border-top: 0.5px solid rgba(255,255,255,0.05);
+  padding: 24px 80px; display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+/* ── MARQUEE ── */
+.marquee-strip {
+  background: var(--forest); padding: 18px 0; overflow: hidden;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  border-bottom: 0.5px solid rgba(255,255,255,0.06);
+}
+.marquee-inner {
+  display: flex; gap: 0; white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 28px;
+  padding: 0 32px;
+  font-size: 10px; font-weight: 400; letter-spacing: 0.24em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+}
+.marquee-sep { color: var(--gold); font-size: 14px; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 100px 28px 40px; }
+  .hero-right { min-height: 50vh; }
+  .section { padding: 80px 28px; }
+  .philosophy-grid, .science-inner, .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .proof-strip { padding: 48px 28px; }
+  .banner { flex-direction: column; padding: 48px 28px; }
+  .banner-actions { flex-wrap: wrap; }
+  footer { grid-template-columns: 1fr; gap: 40px; padding: 48px 28px; }
+  .footer-bottom { padding: 20px 28px; flex-direction: column; gap: 8px; }
+}
+
+.about-story-centered {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.founder-tag {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 48px;
+  text-align: center;
+}
+.story-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--gold);
+  padding-left: 40px;
+  margin-top: 8px;
+}
+.story-para {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--stone);
+  padding: 20px 0;
+  border-bottom: 0.5px solid rgba(44,58,26,0.07);
+}
+.story-para:last-of-type { border-bottom: none; }
+.story-large {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.6;
+}
+.story-para strong { color: var(--forest); font-weight: 400; }
+.story-sign {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--olive-mid);
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 0.5px solid rgba(44,58,26,0.12);
+  align-self: flex-end;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" aria-label="AROHAPURE Private Limited">
+    <svg width="168" height="36" viewBox="0 0 168 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- AROHA bold wordmark -->
+      <text x="0" y="26" font-family="Jost,Arial,sans-serif" font-size="26" font-weight="500" letter-spacing="2" fill="#2C3A1A">AROHA</text>
+      <!-- PURE — rotated 90deg, tight flush right of the final A, reading upward like the PDF -->
+      <g transform="translate(136, 26) rotate(-90)">
+        <text x="0" y="0" font-family="Jost,Arial,sans-serif" font-size="8.5" font-weight="400" letter-spacing="2" fill="#8A7A3C">PURE</text>
+      </g>
+      <!-- CLEAN LABEL PRODUCTS descriptor -->
+      <text x="0" y="35" font-family="Jost,Arial,sans-serif" font-size="6" font-weight="300" letter-spacing="3.5" fill="#8A8070">CLEAN LABEL PRODUCTS</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#science">Our science</a></li>
+    <li><a href="#about">Our story</a></li>
+    <li><a href="#proof">Verify</a></li>
+  </ul>
+  <a href="#products" class="nav-cta">Shop now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div style="margin-bottom:32px;opacity:0;animation:fadeUp .8s .1s forwards;">
+      <svg width="250" height="58" viewBox="0 0 250 58" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AROHAPURE Private Limited">
+        <!-- AROHA bold wordmark -->
+        <text x="0" y="42" font-family="Jost,Arial,sans-serif" font-size="40" font-weight="500" letter-spacing="3" fill="#2C3A1A">AROHA</text>
+        <!-- PURE tight flush right of AROHA, reading upward vertically -->
+        <g transform="translate(213, 42) rotate(-90)">
+          <text x="0" y="0" font-family="Jost,Arial,sans-serif" font-size="11" font-weight="400" letter-spacing="2.5" fill="#8A7A3C">PURE</text>
+        </g>
+        <!-- CLEAN LABEL PRODUCTS descriptor -->
+        <text x="1" y="55" font-family="Jost,Arial,sans-serif" font-size="8" font-weight="300" letter-spacing="5" fill="#8A8070">CLEAN LABEL PRODUCTS</text>
+      </svg>
+    </div>
+    <p class="hero-eyebrow">Clean label nutrition · Hyderabad, India</p>
+    <h1 class="hero-title">
+      Science that<br>
+      belongs on<br>
+      <em>your label.</em>
+    </h1>
+    <p class="hero-body">
+      Every ingredient named. Every source verified. Every batch third-party tested.
+      AROHAPURE Private Limited is India's first clean label product brand built entirely around what is <em>not</em> in the bottle — and the pharmaceutical science behind everything that is.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Explore products</a>
+      <a href="#science" class="btn-ghost">Our formulation science</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-visual">
+      <div class="hero-pill-stack">
+        <div class="product-pill">
+          <div class="pill-dot calm"></div>
+          <span class="pill-name">Calm</span>
+          <span class="pill-desc">Ashwagandha KSM-66®</span>
+        </div>
+        <div class="product-pill">
+          <div class="pill-dot iron"></div>
+          <span class="pill-name">Iron</span>
+          <span class="pill-desc">Women's Iron + Vit C</span>
+        </div>
+        <div class="product-pill">
+          <div class="pill-dot gut"></div>
+          <span class="pill-name">Gut</span>
+          <span class="pill-desc">Synbiotic formula</span>
+        </div>
+        <div class="product-pill">
+          <div class="pill-dot sun"></div>
+          <span class="pill-name">Sun</span>
+          <span class="pill-desc">Vegan D3 + K2 MK-7</span>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-lbl">ingredients max</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-lbl">vegan always</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">NABL</span>
+          <span class="stat-lbl">every batch</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">No magnesium stearate <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No artificial colours <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No gelatin capsules <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No silicon dioxide <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No glucose syrup <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No carrageenan <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No sucralose <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No fillers <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No magnesium stearate <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No artificial colours <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No gelatin capsules <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No silicon dioxide <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No glucose syrup <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No carrageenan <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No sucralose <span class="marquee-sep">·</span></span>
+    <span class="marquee-item">No fillers <span class="marquee-sep">·</span></span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="section reveal" id="philosophy">
+  <div class="philosophy-grid">
+    <div>
+      <span class="section-eyebrow">The AROHAPURE standard</span>
+      <h2 class="section-title">A new standard<br>for <em>what goes in.</em></h2>
+      <p class="section-body">India's supplement market is full of ingredients you can't pronounce and sources you can't verify. We built AROHAPURE on four unbreakable principles.</p>
+      <div class="philosophy-pillars">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <div class="pillar-body">
+            <p class="pillar-title">Short ingredient list</p>
+            <p class="pillar-text">Maximum 5 ingredients per product. Every one does a specific, verifiable job. Nothing that is only there to make manufacturing easier.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <div class="pillar-body">
+            <p class="pillar-title">Natural sources only</p>
+            <p class="pillar-text">Capsule shells from wood pulp. Colours from beetroot. Sweeteners from organic cane. Gelling agents from apple pectin. No synthetic substitutes.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <div class="pillar-body">
+            <p class="pillar-title">Full transparency</p>
+            <p class="pillar-text">Supplier named on the label. Botanical source declared. QR code links to the NABL batch certificate. Every claim verifiable in under 30 seconds.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">04</span>
+          <div class="pillar-body">
+            <p class="pillar-title">Pharmaceutical formulation science</p>
+            <p class="pillar-text">Founded by an M.S. Pharmaceutical Sciences graduate. Bioavailability is engineered into every formula — not assumed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="philosophy-right">
+      <p class="philosophy-quote">"We put less in <span>so you get more out.</span>"</p>
+      <p class="philosophy-attr">The AROHAPURE principle</p>
+      <ul class="no-list">
+        <li>No magnesium stearate · replaced with organic rice flour</li>
+        <li>No gelatin capsule · replaced with HPMC plant shell</li>
+        <li>No Red 40 · replaced with beetroot powder</li>
+        <li>No glucose syrup · replaced with organic cane sugar</li>
+        <li>No carrageenan · replaced with apple pectin</li>
+        <li>No silicon dioxide · replaced with brown rice flour</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section section-alt reveal" id="products">
+  <div class="products-header">
+    <span class="section-eyebrow">The product range</span>
+    <h2 class="section-title">Four problems.<br><em>Four formulas.</em></h2>
+    <p class="section-body">Each AROHAPURE product addresses one of India's biggest nutritional gaps — with the minimum number of ingredients science requires.</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <span class="card-num">01</span>
+      <p class="card-name">Aroha Calm</p>
+      <p class="card-full">Ashwagandha<br>KSM-66®</p>
+      <div class="card-divider"></div>
+      <p class="card-ing-label">4 ingredients</p>
+      <div class="card-ingredients">
+        <span class="ing-tag">KSM-66® 600mg</span>
+        <span class="ing-tag">BioPerine® 5mg</span>
+        <span class="ing-tag">Rice flour</span>
+        <span class="ing-tag">HPMC capsule</span>
+      </div>
+      <p class="card-price">₹699 <span>/ 60 veg caps</span></p>
+      <a href="#" class="card-btn">Learn more</a>
+    </div>
+    <div class="product-card featured">
+      <span class="card-num">02</span>
+      <p class="card-name">Aroha Iron</p>
+      <p class="card-full">Women's Iron<br>+ Vitamin C</p>
+      <div class="card-divider"></div>
+      <p class="card-ing-label">7 ingredients</p>
+      <div class="card-ingredients">
+        <span class="ing-tag">Bisglycinate 18mg</span>
+        <span class="ing-tag">Amla Vit C</span>
+        <span class="ing-tag">Apple pectin</span>
+        <span class="ing-tag">Beetroot</span>
+      </div>
+      <p class="card-price">₹599 <span>/ 30 gummies</span></p>
+      <a href="#" class="card-btn">Learn more</a>
+    </div>
+    <div class="product-card">
+      <span class="card-num">03</span>
+      <p class="card-name">Aroha Gut</p>
+      <p class="card-full">Daily Synbiotic<br>Capsules</p>
+      <div class="card-divider"></div>
+      <p class="card-ing-label">5 ingredients</p>
+      <div class="card-ingredients">
+        <span class="ing-tag">NCFM 5B CFU</span>
+        <span class="ing-tag">Bl-04 5B CFU</span>
+        <span class="ing-tag">Acacia fibre</span>
+        <span class="ing-tag">HPMC capsule</span>
+      </div>
+      <p class="card-price">₹799 <span>/ 30 veg caps</span></p>
+      <a href="#" class="card-btn">Learn more</a>
+    </div>
+    <div class="product-card">
+      <span class="card-num">04</span>
+      <p class="card-name">Aroha Sun</p>
+      <p class="card-full">Vegan D3<br>+ K2 MK-7</p>
+      <div class="card-divider"></div>
+      <p class="card-ing-label">4 ingredients</p>
+      <div class="card-ingredients">
+        <span class="ing-tag">Lichen D3 2000IU</span>
+        <span class="ing-tag">MK-7 100mcg</span>
+        <span class="ing-tag">EVOO carrier</span>
+        <span class="ing-tag">HPMC softgel</span>
+      </div>
+      <p class="card-price">₹649 <span>/ 60 softgels</span></p>
+      <a href="#" class="card-btn">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip reveal" id="proof">
+  <div class="proof-item">
+    <p class="proof-num">4<span>max</span></p>
+    <p class="proof-label">Ingredients per product</p>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <p class="proof-num">100%</p>
+    <p class="proof-label">Plant-derived capsules</p>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <p class="proof-num">0</p>
+    <p class="proof-label">Artificial colours or dyes</p>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <p class="proof-num">0</p>
+    <p class="proof-label">Undeclared excipients</p>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-qr-block">
+    <div class="qr-box">
+      <svg class="qr-icon" viewBox="0 0 36 36" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5">
+        <rect x="4" y="4" width="11" height="11" rx="1"/>
+        <rect x="21" y="4" width="11" height="11" rx="1"/>
+        <rect x="4" y="21" width="11" height="11" rx="1"/>
+        <rect x="6.5" y="6.5" width="6" height="6" fill="rgba(255,255,255,0.7)" stroke="none"/>
+        <rect x="23.5" y="6.5" width="6" height="6" fill="rgba(255,255,255,0.7)" stroke="none"/>
+        <rect x="6.5" y="23.5" width="6" height="6" fill="rgba(255,255,255,0.7)" stroke="none"/>
+        <rect x="21" y="21" width="4" height="4"/>
+        <rect x="27" y="21" width="4" height="4"/>
+        <rect x="21" y="27" width="4" height="4"/>
+        <rect x="27" y="27" width="4" height="4"/>
+      </svg>
+      <span>Scan</span>
+    </div>
+    <div class="proof-qr-text">
+      <p class="proof-qr-title">Verify your batch</p>
+      <p class="proof-qr-sub">Every bottle carries a QR code linking directly to its NABL-accredited lab certificate. Scan. Read. Trust.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCIENCE -->
+<section class="science-section reveal" id="science">
+  <div class="science-inner">
+    <div>
+      <span class="section-eyebrow science-eyebrow">Pharmaceutical science</span>
+      <h2 class="section-title science-title">Built by a scientist.<br><em>For people who read labels.</em></h2>
+      <p class="section-body science-body">AROHAPURE was built by a Gen Z founder with a deep pharmaceutical sciences background. Every formula is designed with the same bioavailability science used in drug development — applied to daily supplementation for a generation that demands to know exactly what they are taking.</p>
+      <div class="science-credentials">
+        <div class="cred">
+          <div class="cred-icon">
+            <svg viewBox="0 0 16 16"><path d="M8 1L2 4v4c0 3.3 2.7 6.4 6 7 3.3-.6 6-3.7 6-7V4L8 1z"/></svg>
+          </div>
+          <div class="cred-body">
+            <p class="cred-title">Pharmaceutical sciences background</p>
+            <p class="cred-sub">Trained in formulation science, bioavailability and Indian pharma</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon">
+            <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4v4l3 2"/></svg>
+          </div>
+          <div class="cred-body">
+            <p class="cred-title">International supplement market experience</p>
+            <p class="cred-sub">Deep exposure to US clean label brands and global formulation standards</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon">
+            <svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10"/><circle cx="8" cy="8" r="6"/></svg>
+          </div>
+          <div class="cred-body">
+            <p class="cred-title">NABL-accredited testing on every batch</p>
+            <p class="cred-sub">Third-party verified. Certificate scannable by QR on every unit.</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon">
+            <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M2 7h12"/></svg>
+          </div>
+          <div class="cred-body">
+            <p class="cred-title">GMP-certified contract manufacturing</p>
+            <p class="cred-sub">ISO 22000 · FSSAI Central License · HACCP certified</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="science-right">
+      <div class="ingredient-card">
+        <div class="ic-header">
+          <p class="ic-name">KSM-66® Ashwagandha</p>
+          <span class="ic-badge">Patented extract</span>
+        </div>
+        <p class="ic-desc">The most clinically studied ashwagandha extract in the world. 5% withanolides, standardised and verified. Sourced directly from Ixoreal Biomed — the only supplier with double-blind clinical trials for stress and sleep improvement.</p>
+        <p class="ic-source">Source: Ixoreal Biomed, India · Withania somnifera root</p>
+      </div>
+      <div class="ingredient-card">
+        <div class="ic-header">
+          <p class="ic-name">Ferrous Bisglycinate</p>
+          <span class="ic-badge">Chelated iron</span>
+        </div>
+        <p class="ic-desc">The only iron form with 3× better absorption than ferrous sulphate and zero constipation. A pharmaceutical scientist's choice — the same form used in clinical iron deficiency studies. Not the cheap alternative.</p>
+        <p class="ic-source">Chelated iron · 18mg elemental per gummy · GMP certified</p>
+      </div>
+      <div class="ingredient-card">
+        <div class="ic-header">
+          <p class="ic-name">Lichen-derived Vegan D3</p>
+          <span class="ic-badge">Plant-based</span>
+        </div>
+        <p class="ic-desc">Most Indian D3 supplements use lanolin — derived from sheep wool. Ours comes from lichen: 100% plant origin, suitable for strict vegetarians and vegans. Paired with MK-7 K2 to direct calcium where it belongs.</p>
+        <p class="ic-source">Fermenta VITADEE™ Green · Cholecalciferol from lichen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section reveal" id="about">
+  <div class="about-story-centered">
+    <span class="section-eyebrow" style="text-align:center;display:block;">The founder's story</span>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 12px;">
+      A pharmacist trained in the USA.<br><em>A problem seen in Hyderabad.</em>
+    </h2>
+    <p class="founder-tag">AROHAPURE Private Limited &nbsp;·&nbsp; Founder</p>
+
+    <div class="story-body">
+      <p class="story-para story-large">
+        I grew up in Hyderabad. I trained in pharmaceutical sciences at JNTUH. Then I went to the United States — to Rowan University in New Jersey — to study formulation science at a graduate level.
+      </p>
+      <p class="story-para">
+        In American supplement aisles, I found something India didn't have: brands that told you everything. Ritual. Thorne. Care/of. Short ingredient lists. Named suppliers. Third-party tested batches. Consumers who paid a premium not for the marketing — but for the proof.
+      </p>
+      <p class="story-para">
+        Then I came back — or at least, I came back in spirit. Because every time I looked at an Indian supplement label, I saw the same thing: magnesium stearate, silicon dioxide, Red 40, carrageenan, glucose syrup. Ingredients that exist only to make manufacturing cheaper. Hidden inside products people took every morning and trusted with their health.
+      </p>
+      <p class="story-para">
+        I was a pharmaceutical scientist. I knew what every single one of those ingredients was. I knew which ones could be replaced with something natural. I knew that ferrous bisglycinate absorbs 3× better than ferrous sulphate and doesn't cause constipation. I knew that HPMC capsules are plant-derived and gelatin capsules are not. I knew that beetroot powder does the same job as Red 40 without the synthetic chemistry.
+      </p>
+      <p class="story-para">
+        <strong>The knowledge existed. Nobody was using it to serve the Indian consumer honestly.</strong>
+      </p>
+      <p class="story-para">
+        So I built AROHAPURE.</p>
+      <p class="story-para">
+        The products we make are not complicated. They are actually the opposite — the simplest possible formulas that clinical science supports. Four ingredients. Every one named. Every source declared. Every batch verified by a third-party lab with a certificate scannable from your phone.
+      </p>
+      <p class="story-para">
+        250 million urban Indians are nutritionally deficient. 53% of Indian women are iron deficient. 70% of India's population has suboptimal Vitamin D. 67% of IT professionals report chronic stress. These are not small problems. They are not solved by products with 14 ingredients that nobody can read.
+      </p>
+      <p class="story-para">
+        <strong>AROHAPURE is the answer I spent years training to give.</strong> Clean label is not a trend. It is where every supplement market in the world is heading. India is five years behind. We are the bridge.
+      </p>
+      <p class="story-sign">— Founder, AROHAPURE Private Limited
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER CTA -->
+<div class="banner reveal">
+  <p class="banner-text">
+    India's first clean label product brand<br>built entirely around what is <em>not</em> in the bottle.
+  </p>
+  <div class="banner-actions">
+    <a href="#products" class="btn-ivory">Shop the range</a>
+    <a href="#proof" class="btn-outline-ivory">Verify a batch</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-logo">
+      <svg width="210" height="48" viewBox="0 0 210 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AROHAPURE Private Limited">
+        <!-- AROHA bold wordmark — ivory on dark -->
+        <text x="0" y="35" font-family="Jost,Arial,sans-serif" font-size="33" font-weight="500" letter-spacing="3" fill="#F5F0E8">AROHA</text>
+        <!-- PURE tight flush right of AROHA, reading upward vertically, gold on dark -->
+        <g transform="translate(176, 35) rotate(-90)">
+          <text x="0" y="0" font-family="Jost,Arial,sans-serif" font-size="10" font-weight="400" letter-spacing="2.5" fill="#B8A860">PURE</text>
+        </g>
+        <!-- CLEAN LABEL PRODUCTS descriptor -->
+        <text x="1" y="46" font-family="Jost,Arial,sans-serif" font-size="7" font-weight="300" letter-spacing="4.5" fill="#8A8070">CLEAN LABEL PRODUCTS</text>
+      </svg>
+    </span>
+    <p class="footer-tagline">Clean label nutrition. Every ingredient named. Every source verified. Every batch NABL-tested.</p>
+    <p class="footer-contact">
+      AROHAPURE Private Limited<br>
+      Hyderabad, Telangana, India<br>
+      <a href="mailto:hello@arohapure.com">hello@arohapure.com</a><br>
+      <a href="https://arohapure.com">arohapure.com</a>
+    </p>
+  </div>
+  <div>
+    <p class="footer-col-title">Products</p>
+    <ul class="footer-links">
+      <li><a href="#">Aroha Calm — Ashwagandha</a></li>
+      <li><a href="#">Aroha Iron — Women's Gummies</a></li>
+      <li><a href="#">Aroha Gut — Synbiotic</a></li>
+      <li><a href="#">Aroha Sun — Vegan D3+K2</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Company</p>
+    <ul class="footer-links">
+      <li><a href="#">Our story</a></li>
+      <li><a href="#">Formulation science</a></li>
+      <li><a href="#">NABL batch verification</a></li>
+      <li><a href="#">Clean label standard</a></li>
+      <li><a href="#">Investor relations</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">Compliance</p>
+    <ul class="footer-links">
+      <li><a href="#">FSSAI Central License</a></li>
+      <li><a href="#">Labelling disclosures</a></li>
+      <li><a href="#">Privacy policy</a></li>
+      <li><a href="#">Terms of use</a></li>
+      <li><a href="#">Returns policy</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 AROHAPURE Private Limited. All rights reserved.</p>
+  <p>Not for medicinal use · FSSAI Lic. No. XXXXXXXXXXXXXXXXX</p>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
